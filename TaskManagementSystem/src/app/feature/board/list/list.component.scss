@@ -1,0 +1,61 @@
+@use "../../../../../src/styles/variables.scss" as v;
+:host {
+  display: block;
+  margin: 16px;
+
+  .board-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    width: 100%;
+  }
+
+  .board {
+  width: 300px;      // Fixed width for each card
+  min-width: 300px;  // Prevent shrinking below 300px
+  max-width: 300px;  // Prevent growing above 300px
+    display: flex;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit; 
+
+    mat-card {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 8px 8px 24px;
+      box-sizing: border-box;
+      margin: 0;
+    }
+  }
+
+  .add-board-btn {
+     width: 100% !important;
+  
+     display: flex;
+     justify-content: flex-start; // or center, as you prefer
+}
+
+  @media (max-width: 1280px) {
+    .board {
+      flex: 1 1 calc(50% - 16px);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .board {
+      flex: 1 1 100%;
+      min-width: 0;
+    }
+  }
+
+  button {
+    margin-top: 20px;
+
+  }
+}
